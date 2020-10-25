@@ -1,0 +1,27 @@
+{
+    "version": 2,
+    "name": "petgram-server-mcvictor",
+    "alias": [
+        "petgram-api-mcvictor"
+    ],
+    "builds": [
+        {
+            "use": "@now/static-build",
+            "src": "package.json"
+        }
+    ],
+    "routes": [
+        {
+            "src": "(.*).json",
+            "dest": "index.json"
+        },
+        {
+            "src": "(.*).js",
+            "dest": "index.js"
+        },
+        {
+            "src": "/.*",
+            "dest": "index.html"
+        }
+    ]
+}
