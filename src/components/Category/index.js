@@ -5,6 +5,6 @@ const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1579820010410-c10411aaa
 export const Category = ({ cover = DEFAULT_IMAGE, path, emoji = 'j' }) => (
   <Anchor href={path}>
     <Image src={cover} />
-    <p>{emoji}</p>
+    {/* <p>{emoji}</p> */}
   </Anchor>
 )
