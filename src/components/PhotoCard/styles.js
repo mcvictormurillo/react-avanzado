@@ -1,6 +1,10 @@
 import styled from 'styled-components'
 import { fadeIn } from '../../styles/ainmation'
 
+export const Article = styled.article`
+min-height:200px;
+`
+
 export const ImgWrapper = styled.div`
 ${fadeIn({ time: '2s' })};
 border-radius:10px;
