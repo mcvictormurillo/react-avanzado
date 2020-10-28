@@ -6,15 +6,19 @@ export const PhotoCard = ({ id, likes = 0, src = DEFAULT_IMAGE }) => {
   const element = useRef(null)
   const [show, setShow] = useState(false)
   useEffect(function () {
-    // console.log('element', element.current)
-    const observer = new window.IntersectionObserver(function (entries) {
-      // console.log('entries', entries)
-      const { isIntersecting } = entries[0]
-      console.log({ isIntersecting })
-      setShow(true)
-      observer.disconnect()
+    Promise.resolve(
+      typeof window.IntersectionObserver !== 'undefined'
+        ? window.IntersectionObserver
+        : import('intersection-observer')
+    ).then(() => {
+      // console.log('element', element.current)
+      const observer = new window.IntersectionObserver(function (entries) {
+        // console.log('entries', entries)
+        setShow(true)
+        observer.disconnect()
+      })
+      observer.observe(element.current)
     })
-    observer.observe(element.current)
   }, [element])
   return (
     <Article ref={element}>
