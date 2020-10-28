@@ -1,13 +1,29 @@
 import React from 'react'
 import { PhotoCard } from '../PhotoCard'
+import { useQuery, gql } from '@apollo/client'
+
+const withPhotos = gql`
+query getPhotos{
+  photos{
+    id
+    categoryId
+    src
+    userId
+    liked
+  }
+}
+`
 
 export const ListOfPhotoCard = () => {
+  const { data, loading, error } = useQuery(withPhotos)
+  const photos = data ? data.photos : []
+  console.log('data graphl', data)
   return (
     <ul>
       {
-        [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(id => {
+        photos.map(photo => {
           return (
-            <PhotoCard key={id} id={id} />
+            <PhotoCard key={photo.id} {...photo} />
           )
         })
       }
