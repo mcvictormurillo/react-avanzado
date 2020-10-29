@@ -14,7 +14,7 @@ export const App = () => {
       <Logo />
       {
         detailID
-          ? <PhotoCardWithQuery />
+          ? <PhotoCardWithQuery id={detailID}/>
           : <>
             <ListOftCategories />
             <ListOfPhotoCard categoryId={2} />

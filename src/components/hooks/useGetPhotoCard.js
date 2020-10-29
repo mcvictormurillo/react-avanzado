@@ -12,6 +12,6 @@ query getSinglePhoto($id:ID!) {
 }
 `
 export const useGetPhotoCard = id => {
-  const { loading, data, error } = useQuery(query, { variables: { id: '7' } })
+  const { loading, data, error } = useQuery(query, { variables: { id: id } })
   return { loading, data, error }
 }
