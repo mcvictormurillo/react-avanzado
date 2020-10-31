@@ -24,8 +24,9 @@ const Login = ({ activateAuth }) => {
   const onSubmit = ({ email, password }) => {
     const input = { email, password }
     const variables = { input }
-    login({ variables }).then(res => {
-      activateAuth()
+    login({ variables }).then(({ data }) => {
+      const { login } = data
+      activateAuth(login)
     })
   }
   const errorMsg = error && 'Usuario incorrecto.'
@@ -37,8 +38,9 @@ const Registro = ({ activateAuth }) => {
   const onSubmit = ({ email, password }) => {
     const input = { email, password }
     const variables = { input }
-    register({ variables }).then(res => {
-      activateAuth()
+    register({ variables }).then(({ data }) => {
+      const { signup } = data
+      activateAuth(signup)
     })
   }
   const errorMsg = error && 'El usuario ya existe o hay algún problema.'
