@@ -1,23 +1,18 @@
-import React from 'react'
-import Context from '../Context'
+import React, { useContext } from 'react'
+import { Context } from '../Context'
 import { UserForm } from '../components/UserForm'
 import { useRegisterMutation } from '../components/hooks/useRegisterMutation'
 import { useMutationLogin } from '../components/hooks/useMutationLogin'
 
-export const NotRegisteredUser = () => (
-  <Context.Consumer>
-    {
-      ({ isAuth, activateAuth }) => {
-        return (
-          <>
-            <Registro activateAuth={activateAuth} />
-            <Login activateAuth={activateAuth} />
-          </>
-        )
-      }
-    }
-  </Context.Consumer>
-)
+export const NotRegisteredUser = () => {
+  const { activateAuth } = useContext(Context)
+  return (
+    <>
+      <Registro activateAuth={activateAuth} />
+      <Login activateAuth={activateAuth} />
+    </>
+  )
+}
 
 const Login = ({ activateAuth }) => {
   const { login, loading, error } = useMutationLogin()
