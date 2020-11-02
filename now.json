@@ -13,11 +13,15 @@
     "routes": [
         {
             "src": "(.*).json",
-            "dest": "index.json"
+            "dest": "/$1.json"
+        },
+        {
+            "src": "(.*).png",
+            "dest": "$1.png"
         },
         {
             "src": "(.*).js",
-            "dest": "index.js"
+            "dest": "/$1.js"
         },
         {
             "src": "/.*",
