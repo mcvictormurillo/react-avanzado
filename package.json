@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "now-build": "npm run build",
+    "serve:dev":"./node_modules/.bin//webpack --mode 'development'",
     "dev": "webpack serve",
     "lint": "standard",
     "test": "echo \"Error: no test specified\" && exit 1"
