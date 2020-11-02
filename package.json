@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack",
     "now-build": "npm run build",
-    "serve:dev":"./node_modules/.bin//webpack --mode 'development'",
+    "serve:dev": "./node_modules/.bin//webpack --mode 'development'",
     "dev": "webpack serve",
     "lint": "standard",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,7 +31,9 @@
     "standard": "^15.0.0",
     "webpack": "^5.2.0",
     "webpack-cli": "^4.1.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "webpack-pwa-manifest": "^4.2.0",
+    "workbox-webpack-plugin": "^5.1.4"
   },
   "dependencies": {
     "@apollo/client": "^3.2.5",

@@ -40,8 +40,8 @@ const ListOftCategoriesComponent = () => {
           ? (<Item> <Category /> </Item>)
           : categories.map(category => {
             return (
-              <Item key={category}>
-                <Category  {...category} path={`/pet/${category.id}`} />
+              <Item key={category.id}>
+                <Category {...category} path={`/pet/${category.id}`} />
               </Item>
             )
           })
